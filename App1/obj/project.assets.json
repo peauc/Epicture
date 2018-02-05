@@ -25575,11 +25575,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\clément péau\\source\\repos\\App1\\App1\\App1.csproj",
+      "projectUniqueName": "C:\\Users\\Clément Péau\\source\\repos\\Epicture\\App1\\App1.csproj",
       "projectName": "App1",
-      "projectPath": "c:\\users\\clément péau\\source\\repos\\App1\\App1\\App1.csproj",
+      "projectPath": "C:\\Users\\Clément Péau\\source\\repos\\Epicture\\App1\\App1.csproj",
       "packagesPath": "C:\\Users\\Clément Péau\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\clément péau\\source\\repos\\App1\\App1\\obj\\",
+      "outputPath": "C:\\Users\\Clément Péau\\source\\repos\\Epicture\\App1\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
