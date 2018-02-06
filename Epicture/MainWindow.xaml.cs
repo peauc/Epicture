@@ -22,6 +22,8 @@ namespace Epicture
     {
         public MainWindow()
         {
+            Flickr.Flickr t = new Flickr.Flickr();
+            t.getImages();
             InitializeComponent();
         }
     }
