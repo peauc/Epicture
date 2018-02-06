@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace Epicture.Models
 {
+    using FlickrNet;
+
     class ImagesModel
     {
-        ImagesModel() {}
+
+        private Photo photo;
+
+        ImagesModel(Photo photo)
+        {
+            this.photo = photo;
+        }
 
         private string url;
 
@@ -24,18 +32,11 @@ namespace Epicture.Models
             }
         }
 
-
-        private bool isFavorited;
-
         public bool IsFavorited {
             get
             {
-                return (this.isFavorited);
+                return (this.photo.DateFavorited is null);
             }
-            set
-            {
-                this.isFavorited = value;
-            } 
         }
     }
 }
