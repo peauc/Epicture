@@ -10,21 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Epicture
+namespace Epicture.ViewModel
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Auth.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Auth : UserControl
     {
-        public MainWindow()
+        public Auth()
         {
-            Flickr.Flickr t = new Flickr.Flickr();
-            t.getImages("Dota", 10);
-            t.UploadPhoto();
             InitializeComponent();
+            DataContext = new ViewModelAuth();
         }
     }
 }
