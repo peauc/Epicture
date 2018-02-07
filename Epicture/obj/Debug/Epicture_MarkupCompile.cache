@@ -12,9 +12,15 @@ DEBUG;TRACE
 C:\Users\dolmb\Source\Repos\Epicture\Epicture\App.xaml
 2-1535285071
 
+<<<<<<< HEAD
 141830712396
 1645711217
 Auth.xaml;MainWindow.xaml;
+=======
+8-1140647561
+16-1627140201
+MainWindow.xaml;
+>>>>>>> 57296c7808d38c121e95ff2740695a12400136a1
 
-True
+False
 
