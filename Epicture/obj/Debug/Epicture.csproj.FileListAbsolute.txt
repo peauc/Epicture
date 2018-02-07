@@ -18,3 +18,25 @@ C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj.CoreCompileInputs.cache
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.exe
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.pdb
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Epicture.exe.config
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Epicture.exe
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Epicture.pdb
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\FlickrNet.dll
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Imgur.API.dll
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Imgur.API.xml
+C:\Users\dolmb\source\repos\Epicture\Epicture\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.csprojResolveAssemblyReference.cache
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Auth.g.cs
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\View\MainWindow.g.cs
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\View\App.g.cs
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture_MarkupCompile.cache
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture_MarkupCompile.lref
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Auth.baml
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\View\MainWindow.baml
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.g.resources
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.Properties.Resources.resources
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj.GenerateResource.Cache
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj.CoreCompileInputs.cache
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.exe
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\Epicture.pdb

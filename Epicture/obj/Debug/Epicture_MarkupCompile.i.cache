@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dolmb\Source\Repos\Epicture\Epicture\obj\Debug\
+C:\Users\dolmb\source\repos\Epicture\Epicture\obj\Debug\
 Epicture
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\dolmb\Source\Repos\Epicture\Epicture\App.xaml
-2-1535285071
+C:\Users\dolmb\source\repos\Epicture\Epicture\View\App.xaml
+2-103008584
 
-18-1342085473
-1645711217
-Auth.xaml;MainWindow.xaml;
-=======
-C:\Users\Clément Péau\source\repos\Epicture\Epicture\View\App.xaml
-1-1711142684
-
-121756924525
-16-1627140201
-View\MainWindow.xaml;
->>>>>>> 57296c7808d38c121e95ff2740695a12400136a1
+18-1290815116
+161283361590
+Auth.xaml;View\MainWindow.xaml;
 
 True
 
