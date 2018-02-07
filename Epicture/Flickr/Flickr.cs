@@ -45,7 +45,6 @@
 
         public PhotoCollection getImages(string tags, Int32 numberOfResultsPerPage)
         {
-
             var options = new PhotoSearchOptions
             {
                 Tags = tags,
@@ -58,6 +57,11 @@
                 Debug.WriteLine(t.LargeUrl);
             }
             return (photos);
+        }
+
+        public void UploadPhoto()
+        {
+            this.FlickrApi.UploadPicture("Poc.jpg");
         }
     }
 }

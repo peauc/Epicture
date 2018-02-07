@@ -23,7 +23,8 @@ namespace Epicture
         public MainWindow()
         {
             Flickr.Flickr t = new Flickr.Flickr();
-            t.getImages();
+            t.getImages("Dota", 10);
+            t.UploadPhoto();
             InitializeComponent();
         }
     }
