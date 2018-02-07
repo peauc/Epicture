@@ -69,23 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
-=======
-    <Compile Include="AddCommand.cs" />
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="ViewBase.cs" />
-    <Compile Include="ViewMain.cs" />
-    <Compile Include="ViewModelAuth.cs" />
-    <Page Include="Auth.xaml">
->>>>>>> 8e3911fd33f78d7f2a87a687d185c8fe79a6d238
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,16 +86,12 @@
     </Compile>
     <Compile Include="Flickr\Flickr.cs" />
     <Compile Include="Imgur\ImgurAPI.cs" />
-<<<<<<< HEAD
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\LoginView.xaml">
-=======
-    <Page Include="View\MainWindow.xaml">
->>>>>>> 8e3911fd33f78d7f2a87a687d185c8fe79a6d238
-      <SubType>Designer</SubType>
+     <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
