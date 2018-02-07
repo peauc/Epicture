@@ -7,14 +7,14 @@ C:\Users\Clément Péau\source\repos\Epicture\Epicture\bin\Debug\Newtonsoft.Json
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\bin\Debug\Imgur.API.xml
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.csprojResolveAssemblyReference.cache
-C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\MainWindow.g.cs
-C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\App.g.cs
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture_MarkupCompile.cache
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture_MarkupCompile.lref
-C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\MainWindow.baml
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.g.resources
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.Properties.Resources.resources
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj.GenerateResource.Cache
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.csproj.CoreCompileInputs.cache
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.exe
 C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\Epicture.pdb
+C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\View\MainWindow.g.cs
+C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\View\App.g.cs
+C:\Users\Clément Péau\source\repos\Epicture\Epicture\obj\Debug\View\MainWindow.baml
