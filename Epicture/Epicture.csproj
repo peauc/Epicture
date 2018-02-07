@@ -63,6 +63,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCommand.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewBase.cs" />
+    <Compile Include="ViewMain.cs" />
+    <Compile Include="ViewModelAuth.cs" />
+    <Page Include="Auth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +79,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Auth.xaml.cs">
+      <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
     <Compile Include="Flickr\Flickr.cs" />
     <Compile Include="Imgur\ImgurAPI.cs" />
