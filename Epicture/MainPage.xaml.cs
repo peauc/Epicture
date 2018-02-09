@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Epicture
 {
+    using Epicture.Tools;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -24,6 +26,7 @@ namespace Epicture
     {
         public MainPage()
         {
+            Imgur t = new Imgur();
             this.InitializeComponent();
         }
 
