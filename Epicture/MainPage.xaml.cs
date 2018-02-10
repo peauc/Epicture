@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Epicture
 {
+    using System.Linq;
+
+    using Epicture.Tools;
+
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -24,6 +18,7 @@ namespace Epicture
     {
         public MainPage()
         {
+            Imgur t = new Imgur();
             this.InitializeComponent();
         }
 
@@ -31,11 +26,11 @@ namespace Epicture
         {
 
             // set the initial SelectedItem
-            foreach (NavigationViewItemBase item in NavView.MenuItems)
+            foreach (NavigationViewItemBase item in this.NavView.MenuItems)
             {
                 if (item is NavigationViewItem && item.Tag.ToString() == "apps")
                 {
-                    NavView.SelectedItem = item;
+                    this.NavView.SelectedItem = item;
                     break;
                 }
             }
@@ -46,13 +41,13 @@ namespace Epicture
 
             if (args.IsSettingsInvoked)
             {
-                ContentFrame.Navigate(typeof(MainFeedPage));
+                this.ContentFrame.Navigate(typeof(MainFeedPage));
             }
             else
             {
                 // find NavigationViewItem with Content that equals InvokedItem
                 var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
-                NavView_Navigate(item as NavigationViewItem);
+                this.NavView_Navigate((NavigationViewItem)item);
 
             }
         }
@@ -61,12 +56,12 @@ namespace Epicture
         {
             if (args.IsSettingsSelected)
             {
-                ContentFrame.Navigate(typeof(MainFeedPage));
+                this.ContentFrame.Navigate(typeof(MainFeedPage));
             }
             else
             {
                 NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-                NavView_Navigate(item);
+                this.NavView_Navigate(item);
             }
         }
 
@@ -75,15 +70,15 @@ namespace Epicture
             switch (item.Tag)
             {
                 case "main_feed":
-                    ContentFrame.Navigate(typeof(MainFeedPage));
+                    this.ContentFrame.Navigate(typeof(MainFeedPage));
                     break;
 
                 case "favs":
-                    ContentFrame.Navigate(typeof(FavoritesPage));
+                    this.ContentFrame.Navigate(typeof(FavoritesPage));
                     break;
 
                 case "collection":
-                    ContentFrame.Navigate(typeof(MyImagesPage));
+                    this.ContentFrame.Navigate(typeof(MyImagesPage));
                     break;
             }
         }

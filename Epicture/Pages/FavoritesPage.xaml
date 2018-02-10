@@ -6,10 +6,35 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="using:Epicture.Models.Pages"
+    xmlns:models="using:Epicture.Models"
     mc:Ignorable="d">
+
+    <GridView ItemsSource="{Binding Images, Mode=TwoWay}">
+        <GridView.ItemTemplate>
+            <DataTemplate x:Name="ImageOverlayDataTemplate" x:DataType="models:ImageModel">
+                <Grid Height="180" Width="320" AutomationProperties.Name="{x:Bind Title}">
+                    <Image Source="Placeholder.png" Stretch="UniformToFill"/>
+                    <StackPanel Orientation="Vertical" Height="60" VerticalAlignment="Bottom" Background="{ThemeResource SystemBaseLowColor}" Padding="12">
+                        <TextBlock Text="{x:Bind Title}"/>
+                        <TextBlock Text="{x:Bind Desc}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+        <GridView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </GridView.ItemsPanel>
+    </GridView>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Refresh" Label="Refresh" Command="{Binding RefreshCommand, Mode=OneWay}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <Page.DataContext>
         <pages:FavoritesPageData/>
     </Page.DataContext>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 </Page>

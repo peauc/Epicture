@@ -1,4 +1,4 @@
-﻿namespace Epicture
+﻿namespace Epicture.Tools
 {
     using System.Collections.Generic;
     using System.ComponentModel;

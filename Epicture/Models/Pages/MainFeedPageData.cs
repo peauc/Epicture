@@ -11,9 +11,25 @@
             this.LoadDatasAsync();
         }
 
-        private async void LoadDatasAsync()
+        public override void Refresh()
         {
-            this.Images = await ImageRepository.GetAllImagesAsync(string.Empty);
+            this.LoadImagesAsync();
+        }
+
+        private void LoadDatasAsync()
+        {
+            this.LoadImagesAsync();
+        }
+
+        private async void LoadImagesAsync()
+        {
+            this.Images.Clear();
+
+            var submissions = await ImageRepository.GetAllImagesAsync("dota", FeedModel.Api);
+            foreach (ImageModel submission in submissions)
+            {
+                this.Images.Add(submission);
+            }
         }
     }
 }

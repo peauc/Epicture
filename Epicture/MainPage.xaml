@@ -17,8 +17,8 @@
         <NavigationView.MenuItems>
             <NavigationViewItemSeparator/>
             <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Feed" Tag="main_feed"/>
-            <NavigationViewItem x:Uid="GamesNavItem" Icon="Video" Content="Favorites" Tag="favs"/>
-            <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="My Images" Tag="collection"/>
+            <NavigationViewItem x:Uid="GamesNavItem" Icon="AllApps" Content="Favorites" Tag="favs"/>
+            <NavigationViewItem x:Uid="MusicNavItem" Icon="AllApps" Content="My Images" Tag="collection"/>
         </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
@@ -53,6 +53,5 @@
                 </TransitionCollection>
             </Frame.ContentTransitions>
         </Frame>
-
     </NavigationView>
 </Page>
