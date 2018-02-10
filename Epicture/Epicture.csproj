@@ -95,6 +95,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pages\FavoritesPageData.cs" />
+    <Compile Include="Models\Pages\FeedModel.cs" />
+    <Compile Include="Models\Pages\MainFeedPageData.cs" />
+    <Compile Include="Models\Pages\MyImagesPageData.cs" />
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="Pages\FavoritesPage.xaml.cs">
       <DependentUpon>FavoritesPage.xaml</DependentUpon>
     </Compile>
@@ -155,6 +160,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="NETStandard.HttpListener">
+      <Version>1.0.3.4</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>10.0.3</Version>

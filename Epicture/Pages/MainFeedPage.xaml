@@ -5,9 +5,56 @@
     xmlns:local="using:Epicture"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:Epicture.Models"
+    xmlns:pages="using:Epicture.Models.Pages"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    </Grid>
+    <!--<Page.Resources>
+        -->
+    <!--<DataTemplate x:Key="ImageOverlayDataTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Url, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40"/>
+                <TextBlock Text="{Binding AuthorName, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40"/>
+            </StackPanel>
+        </DataTemplate>-->
+    <!--
+        <DataTemplate x:Key="ImageOverlayDataTemplate">
+            <Grid Height="180" Width="320">
+                <Image Source="Placeholder.png" Stretch="UniformToFill"/>
+                <StackPanel Orientation="Vertical" Height="60" VerticalAlignment="Bottom" Background="{ThemeResource SystemBaseLowColor}" Padding="12">
+                    <TextBlock Text="{Binding Url}"/>
+                    <TextBlock Text="{Binding AuthorName}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>-->
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding Images}" ItemTemplate="{StaticResource ImageOverlayDataTemplate}"/>
+        </ScrollViewer>
+
+    </Grid>-->
+    <GridView ItemsSource="{Binding Images}">
+        <GridView.ItemTemplate>
+            <DataTemplate x:Name="ImageOverlayDataTemplate" x:DataType="models:ImageModel">
+                <Grid Height="180" Width="320" AutomationProperties.Name="{x:Bind AuthorName}">
+                    <Image Source="Placeholder.png" Stretch="UniformToFill"/>
+                    <StackPanel Orientation="Vertical" Height="60" VerticalAlignment="Bottom" Background="{ThemeResource SystemBaseLowColor}" Padding="12">
+                        <TextBlock Text="{x:Bind AuthorName}"/>
+                        <TextBlock Text="{x:Bind Url}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+        <GridView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </GridView.ItemsPanel>
+    </GridView>
+
+    <Page.DataContext>
+        <pages:MainFeedPageData/>
+    </Page.DataContext>
 </Page>

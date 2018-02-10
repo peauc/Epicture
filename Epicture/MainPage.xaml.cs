@@ -30,7 +30,7 @@ namespace Epicture
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
 
-            // set the initial SelectedItem 
+            // set the initial SelectedItem
             foreach (NavigationViewItemBase item in NavView.MenuItems)
             {
                 if (item is NavigationViewItem && item.Tag.ToString() == "apps")

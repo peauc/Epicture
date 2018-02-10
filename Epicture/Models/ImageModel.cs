@@ -3,12 +3,10 @@
 
     public class ImageModel
     {
-        private string url;
+        public string Url { get; set; }
 
-        public string Url
-        {
-            get => this.url;
-            set => this.url = value;
-        }
+        public string AuthorName { get; set; }
+
+        public bool IsFavorite { get; set; }
     }
 }
