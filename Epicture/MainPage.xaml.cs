@@ -1,10 +1,14 @@
-﻿
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+﻿// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Epicture
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
+
+    using Windows.ApplicationModel.Core;
+    using Windows.UI;
+    using Windows.UI.ViewManagement;
 
     using Epicture.Tools;
 
@@ -16,15 +20,37 @@ namespace Epicture
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private Dictionary<Type, string> typeToPageName;
+
         public MainPage()
         {
             Imgur t = new Imgur();
             this.InitializeComponent();
+
+            //draw into the title bar
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+
+            //remove the solid-colored backgrounds behind the caption controls and system back button
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.ButtonBackgroundColor = Colors.Transparent;
+            titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            titleBar.ButtonForegroundColor = (Color)this.Resources["SystemBaseHighColor"];
+
+            this.typeToPageName = new Dictionary<Type, string>
+            {
+                [typeof(MainFeedPage)] = "Feed",
+                [typeof(FavoritesPage)] = "Favorites",
+                [typeof(MyImagesPage)] = "Submissions"
+            };
+
+            this.CurrentPageName = this.typeToPageName[typeof(MainFeedPage)];
+            this.ContentFrame.Navigate(typeof(MainFeedPage));
         }
+
+        public string CurrentPageName { get; set; }
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
-
             // set the initial SelectedItem
             foreach (NavigationViewItemBase item in this.NavView.MenuItems)
             {
@@ -38,31 +64,14 @@ namespace Epicture
 
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-
-            if (args.IsSettingsInvoked)
-            {
-                this.ContentFrame.Navigate(typeof(MainFeedPage));
-            }
-            else
-            {
-                // find NavigationViewItem with Content that equals InvokedItem
-                var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
-                this.NavView_Navigate((NavigationViewItem)item);
-
-            }
+            var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
+            this.NavView_Navigate((NavigationViewItem)item);
         }
 
         private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            if (args.IsSettingsSelected)
-            {
-                this.ContentFrame.Navigate(typeof(MainFeedPage));
-            }
-            else
-            {
-                NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-                this.NavView_Navigate(item);
-            }
+            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+            this.NavView_Navigate(item);
         }
 
         private void NavView_Navigate(NavigationViewItem item)
@@ -70,14 +79,17 @@ namespace Epicture
             switch (item.Tag)
             {
                 case "main_feed":
+                    this.CurrentPageName = this.typeToPageName[typeof(MainFeedPage)];
                     this.ContentFrame.Navigate(typeof(MainFeedPage));
                     break;
 
                 case "favs":
+                    this.CurrentPageName = this.typeToPageName[typeof(FavoritesPage)];
                     this.ContentFrame.Navigate(typeof(FavoritesPage));
                     break;
 
                 case "collection":
+                    this.CurrentPageName = this.typeToPageName[typeof(MyImagesPage)];
                     this.ContentFrame.Navigate(typeof(MyImagesPage));
                     break;
             }
