@@ -1,6 +1,7 @@
 ﻿namespace Epicture.Models.Pages
 {
     using System;
+    using System.Collections.ObjectModel;
 
     using Epicture.Repositories;
 
@@ -8,8 +9,12 @@
     {
         public MainFeedPageData()
         {
+            this.SearchValue = App.SearchValue;
+            App.SearchValue = string.Empty;
             this.LoadDatasAsync();
         }
+
+        private string SearchValue { get; set; }
 
         public override void Refresh()
         {
@@ -25,14 +30,17 @@
         {
             this.Images.Clear();
 
-            var submissions = await ImageRepository.GetAllImagesAsync("dota", FeedModel.Api);
-            if (submissions == null)
+            try
             {
-                return;
+                ObservableCollection<ImageModel> submissions = await ImageRepository.GetAllImagesAsync(this.SearchValue, App.Api);
+                foreach (ImageModel submission in submissions)
+                {
+                    this.Images.Add(submission);
+                }
             }
-            foreach (ImageModel submission in submissions)
+            catch (ArgumentNullException e)
             {
-                this.Images.Add(submission);
+                Console.WriteLine(e);
             }
         }
     }

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Epicture.Models;
@@ -53,7 +54,7 @@
             return images;
         }
 
-        public static async Task<ObservableCollection<ImageModel>> GetFavoriteImagesAsync(string filter)
+        public static async Task<ObservableCollection<ImageModel>> GetFavoriteImagesAsync(string filter, Imgur api)
         {
             ObservableCollection<ImageModel> images = new ObservableCollection<ImageModel>();
 
@@ -70,12 +71,20 @@
             else
             {
                 // call imgur API
-                images = new ObservableCollection<ImageModel>
-                             {
-                                 new ImageModel { Width = 300, Height = 200, Title = "Title2", Desc = "lorem ipsum", IsFavorite = true, Url = "url2" },
-                                 new ImageModel { Width = 300, Height = 200, Title = "Title3", Desc = "lorem ipsum", IsFavorite = true, Url = "url3" },
-                                 new ImageModel { Width = 300, Height = 200, Title = "Title7", Desc = "lorem ipsum", IsFavorite = true, Url = "url7" }
-                             };
+                var ret = await api.GetFavorite();
+                foreach (IDataModel dataModel in ret)
+                {
+                    if (dataModel.GetType() == typeof(Image))
+                    {
+                        images.Add(new ImageModel(dataModel as Image));
+                        images.Last().IsFavorite = true;
+                    }
+                    else if (dataModel.GetType() == typeof(GalleryImage))
+                    {
+                        images.Add(new ImageModel(dataModel as GalleryImage));
+                        images.Last().IsFavorite = true;
+                    }
+                }
             }
 
             return images;

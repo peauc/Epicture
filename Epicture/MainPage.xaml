@@ -24,7 +24,7 @@
         </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
-            <AutoSuggestBox x:Name="ASB" QueryIcon="Find" PlaceholderText="Search"/>
+            <AutoSuggestBox x:Name="ASB" QueryIcon="Find" PlaceholderText="Search" QuerySubmitted="AutoSuggestBox_QuerySubmitted"/>
         </NavigationView.AutoSuggestBox>
 
         <NavigationView.HeaderTemplate>

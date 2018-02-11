@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\FavoriteCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Pages\FavoritesPageData.cs" />

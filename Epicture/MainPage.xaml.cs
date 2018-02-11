@@ -22,6 +22,7 @@ namespace Epicture
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         private Dictionary<Type, string> typeToPageName;
 
         public MainPage()
@@ -50,6 +51,8 @@ namespace Epicture
             this.ContentFrame.Navigate(typeof(MainFeedPage));
         }
 
+        public static string SearchValue { get; set; }
+
         public string CurrentPageName { get; set; }
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -57,7 +60,7 @@ namespace Epicture
             // set the initial SelectedItem
             foreach (NavigationViewItemBase item in this.NavView.MenuItems)
             {
-                if (item is NavigationViewItem && item.Tag.ToString() == "apps")
+                if (item is NavigationViewItem && item.Tag.ToString() == "main_feed")
                 {
                     this.NavView.SelectedItem = item;
                     break;
@@ -100,6 +103,13 @@ namespace Epicture
                     this.ContentFrame.Navigate(typeof(UploadPage));
                     break;
             }
+        }
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            App.SearchValue = sender.Text;
+            this.CurrentPageName = this.typeToPageName[typeof(MainFeedPage)];
+            this.ContentFrame.Navigate(typeof(MainFeedPage));
         }
     }
 }

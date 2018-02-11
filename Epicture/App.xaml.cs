@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Epicture
 {
+    using Epicture.Tools;
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
@@ -30,7 +32,15 @@ namespace Epicture
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            if (Api == null)
+            {
+                Api = new Imgur();
+            }
         }
+
+        public static string SearchValue { get; set; } = string.Empty;
+
+        public static Imgur Api { get; set; } = null;
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
