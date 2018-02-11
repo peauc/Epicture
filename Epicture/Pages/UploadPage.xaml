@@ -22,11 +22,11 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Button Command="{Binding StartExplorerCommand}" Grid.Row="0" Grid.Column="0">Explore</Button>
-        <TextBlock HorizontalTextAlignment="Center" Text="{Binding Search}" Grid.Row="0" Grid.Column="1" Margin="10 10"></TextBlock>
+        <TextBlock HorizontalTextAlignment="Center" Text="{Binding Search, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" Margin="10 10">asdasdsd</TextBlock>
         <TextBlock Grid.Row="1">Title</TextBlock>
         <TextBox Grid.Row="2" Text="{Binding Title}"/>
         <TextBlock Grid.Row="3">Description</TextBlock>
         <TextBox Grid.Row="4" Text="{Binding Description}"/>
-        <Button Grid.Row="5" Command="{Binding StartUploadCommand}">Validate</Button>
+        <Button Grid.Row="5">Validate</Button>
     </Grid>
 </Page>

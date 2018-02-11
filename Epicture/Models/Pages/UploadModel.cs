@@ -34,19 +34,32 @@ namespace Epicture.Models.Pages
         public string Description
         {
             get { return description; }
-            set { description = value; }
+            set
+            {
+                description = value; 
+                this.OnPropertyChanged();
+            }
         }
 
         public string Title
         {
             get { return title; }
-            set { title = value; }
+            set
+            {
+                title = value; 
+                this.OnPropertyChanged();
+            }
         }
 
         public string Search
         {
-            get => search;
-            set => search = value;
+            get => this.search;
+            set
+            {
+                this.search = value;
+                this.OnPropertyChanged();
+            
+            }
         }
 
         public ICommand StartExplorerCommand { get; private set; }
@@ -64,7 +77,8 @@ namespace Epicture.Models.Pages
             var file = await picker.PickSingleFileAsync();
             if (file != null)
             {
-                Search = file.Name;
+                Debug.WriteLine($"New file = {file.Name}");
+                this.Search = file.Name;
             }
             return (file);
         }
@@ -80,7 +94,7 @@ namespace Epicture.Models.Pages
 
         public void StartExplorer(object o)
         { 
-            var t = this.StartExplorerAndGetFileName();
+            this.StartExplorerAndGetFileName();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

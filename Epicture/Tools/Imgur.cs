@@ -8,6 +8,10 @@ namespace Epicture.Tools
 {
     using System.Collections;
     using System.Diagnostics;
+    using System.IO;
+
+    using Windows.Foundation.Collections;
+    using Windows.Storage;
 
     using Epicture.Models;
 
@@ -36,9 +40,17 @@ namespace Epicture.Tools
 
         public async void UploadImage(string fileName, string title = null, string description = null)
         {
-            var endpoint = new ImageEndpoint(this.client);
-            var file = System.IO.File.ReadAllBytes(fileName);
-            await endpoint.UploadImageBinaryAsync(file);
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///{fileName}"));
+            if (file != null)
+            {
+                var endpoint = new ImageEndpoint(client);
+                using (var inputStream = await file.OpenReadAsync())
+                using (var classicStream = inputStream.AsStreamForRead())
+                {
+                    endpoint.UploadImageStreamAsync(classicStream, title: title, description: description);
+                }
+            }
+
         }
 
         public async Task<IEnumerable<IDataModel>> GetFavorite()
