@@ -18,10 +18,22 @@
                             <BitmapImage UriSource="{x:Bind Url}" />
                         </Image.Source>
                     </Image>
-                    <StackPanel Margin="0,12">
-                        <TextBlock Text="{x:Bind Title}"/>
-                        <TextBlock Text="{x:Bind Desc}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
-                    </StackPanel>
+                    <Grid Margin="0,12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{x:Bind Title}"/>
+                            <TextBlock Text="{x:Bind Desc}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                        </StackPanel>
+                        <Button x:Name="btFavorite" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="{x:Bind FavoriteEnabled}" Visibility="{x:Bind FavoriteVisibility, Mode=OneWay}" Command="{x:Bind FavoriteCommand, Mode=OneWay}" Background="{ThemeResource SystemControlBackgroundAltHighBrush}" Grid.Column="1">
+                            <SymbolIcon x:Name="fav" Symbol="OutlineStar"/>
+                        </Button>
+                        <Button x:Name="btUnFavorite" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="{x:Bind UnFavoriteEnabled}" Visibility="{x:Bind UnFavoriteVisibility, Mode=OneWay}" Command="{x:Bind FavoriteCommand, Mode=OneWay}" Background="{ThemeResource SystemControlBackgroundAltHighBrush}" Grid.Column="1">
+                            <SymbolIcon x:Name="unfav" Symbol="Cancel"/>
+                        </Button>
+                    </Grid>
                 </StackPanel>
             </DataTemplate>
         </GridView.ItemTemplate>

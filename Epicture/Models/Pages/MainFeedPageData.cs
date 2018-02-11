@@ -32,7 +32,7 @@
 
             try
             {
-                ObservableCollection<ImageModel> submissions = await ImageRepository.GetAllImagesAsync(this.SearchValue, FeedModel.Api);
+                ObservableCollection<ImageModel> submissions = await ImageRepository.GetAllImagesAsync(this.SearchValue, App.Api);
                 foreach (ImageModel submission in submissions)
                 {
                     this.Images.Add(submission);

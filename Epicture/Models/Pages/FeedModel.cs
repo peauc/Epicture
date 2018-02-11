@@ -12,13 +12,7 @@
         protected FeedModel()
         {
             this.RefreshCommand = new RefreshCommand(this);
-            if (Api == null)
-            {
-                Api = new Imgur();
-            }
         }
-
-        public static Imgur Api { get; set; } = null;
 
         public RefreshCommand RefreshCommand { get; }
 

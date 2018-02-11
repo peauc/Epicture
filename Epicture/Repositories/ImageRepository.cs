@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Epicture.Models;
@@ -76,10 +77,12 @@
                     if (dataModel.GetType() == typeof(Image))
                     {
                         images.Add(new ImageModel(dataModel as Image));
+                        images.Last().IsFavorite = true;
                     }
                     else if (dataModel.GetType() == typeof(GalleryImage))
                     {
                         images.Add(new ImageModel(dataModel as GalleryImage));
+                        images.Last().IsFavorite = true;
                     }
                 }
             }

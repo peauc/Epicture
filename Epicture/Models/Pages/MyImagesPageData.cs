@@ -22,7 +22,7 @@
         private async void LoadImagesAsync()
         {
             this.Images.Clear();
-            var submissions = await ImageRepository.GetUserImagesAsync(string.Empty, FeedModel.Api);
+            var submissions = await ImageRepository.GetUserImagesAsync(string.Empty, App.Api);
 
             foreach (ImageModel submission in submissions)
             {
