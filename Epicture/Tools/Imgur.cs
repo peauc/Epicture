@@ -59,7 +59,7 @@ namespace Epicture.Tools
                     imageSearch.Add(t);
                 }
             }
-            return galleryItems;
+            return imageSearch;
         }
 
         public async Task<List<IDataModel>> SearchForImages(string query, int page = 1)

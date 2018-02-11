@@ -24,7 +24,7 @@
         private async void LoadImagesAsync()
         {
             this.Images.Clear();
-            var submissions = await ImageRepository.GetFavoriteImagesAsync(string.Empty);
+            var submissions = await ImageRepository.GetFavoriteImagesAsync(string.Empty, FeedModel.Api);
 
             foreach (ImageModel submission in submissions)
             {
