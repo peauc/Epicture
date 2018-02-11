@@ -95,12 +95,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\Pages\FavoritesPageData.cs" />
     <Compile Include="Models\Pages\FeedModel.cs" />
     <Compile Include="Models\Pages\MainFeedPageData.cs" />
     <Compile Include="Models\Pages\MyImagesPageData.cs" />
+    <Compile Include="Models\Pages\UploadModel.cs" />
+    <Compile Include="Pages\UploadPage.xaml.cs">
+      <DependentUpon>UploadPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FavoritesPage.xaml.cs">
       <DependentUpon>FavoritesPage.xaml</DependentUpon>
     </Compile>
@@ -114,6 +119,7 @@
     <Compile Include="Pages\MyImagesPage.xaml.cs">
       <DependentUpon>MyImagesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Tools\Imgur.cs" />
@@ -140,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\UploadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FavoritesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

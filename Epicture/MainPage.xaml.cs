@@ -15,6 +15,8 @@ namespace Epicture
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
+    using Epicture.Pages;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -40,7 +42,8 @@ namespace Epicture
             {
                 [typeof(MainFeedPage)] = "Feed",
                 [typeof(FavoritesPage)] = "Favorites",
-                [typeof(MyImagesPage)] = "Submissions"
+                [typeof(MyImagesPage)] = "Submissions",
+                [typeof(UploadPage)] = "Upload"
             };
 
             this.CurrentPageName = this.typeToPageName[typeof(MainFeedPage)];
@@ -91,6 +94,10 @@ namespace Epicture
                 case "collection":
                     this.CurrentPageName = this.typeToPageName[typeof(MyImagesPage)];
                     this.ContentFrame.Navigate(typeof(MyImagesPage));
+                    break;
+                case "upload":
+                    this.CurrentPageName = this.typeToPageName[typeof(UploadPage)];
+                    this.ContentFrame.Navigate(typeof(UploadPage));
                     break;
             }
         }

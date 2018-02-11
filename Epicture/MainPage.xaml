@@ -20,6 +20,7 @@
             <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Feed" Tag="main_feed"/>
             <NavigationViewItem x:Uid="GamesNavItem" Icon="AllApps" Content="Favorites" Tag="favs"/>
             <NavigationViewItem x:Uid="MusicNavItem" Icon="AllApps" Content="My Images" Tag="collection"/>
+            <NavigationViewItem x:Uid="MusicNavItem" Icon="AllApps" Content="Upload an image" Tag="upload"/>
         </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
