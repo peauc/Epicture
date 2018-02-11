@@ -26,6 +26,10 @@
             this.Images.Clear();
 
             var submissions = await ImageRepository.GetAllImagesAsync("dota", FeedModel.Api);
+            if (submissions == null)
+            {
+                return;
+            }
             foreach (ImageModel submission in submissions)
             {
                 this.Images.Add(submission);

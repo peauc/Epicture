@@ -12,17 +12,17 @@
     <GridView ItemsSource="{Binding Images}">
         <GridView.ItemTemplate>
             <DataTemplate x:Name="ImageOverlayDataTemplate" x:DataType="models:ImageModel">
-                <Grid Height="180" Width="320" AutomationProperties.Name="{x:Bind Title}">
-                    <Image>
+                <StackPanel Height="280" Width="320" Margin="12">
+                    <Image Height="220" Width="320" Stretch="UniformToFill">
                         <Image.Source>
                             <BitmapImage UriSource="{x:Bind Url}" />
                         </Image.Source>
                     </Image>
-                    <StackPanel Orientation="Vertical" Height="60" VerticalAlignment="Bottom" Background="{ThemeResource SystemBaseLowColor}" Padding="12">
+                    <StackPanel Margin="0,12">
                         <TextBlock Text="{x:Bind Title}"/>
                         <TextBlock Text="{x:Bind Desc}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
                     </StackPanel>
-                </Grid>
+                </StackPanel>
             </DataTemplate>
         </GridView.ItemTemplate>
         <GridView.ItemsPanel>

@@ -9,6 +9,7 @@
     using Epicture.Tools;
 
     using Imgur.API.Models;
+    using Imgur.API.Models.Impl;
 
     public static class ImageRepository
     {
@@ -38,13 +39,13 @@
                 var ret = await api.SearchForImages(filter);
                 foreach (IDataModel dataModel in ret)
                 {
-                    if (dataModel.GetType() == typeof(IImage))
+                    if (dataModel.GetType() == typeof(Image))
                     {
-                        images.Add(new ImageModel(dataModel as IImage));
+                        images.Add(new ImageModel(dataModel as Image));
                     }
-                    else if (dataModel.GetType() == typeof(IGalleryImage))
+                    else if (dataModel.GetType() == typeof(GalleryImage))
                     {
-                        images.Add(new ImageModel(dataModel as IGalleryImage));
+                        images.Add(new ImageModel(dataModel as GalleryImage));
                     }
                 }
             }
