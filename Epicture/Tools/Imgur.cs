@@ -34,10 +34,38 @@ namespace Epicture.Tools
             SearchForImages("Dota");
         }
 
-        public async Task<List<IDataModel>> SearchForImages(string query)
+        public async Task<IEnumerable<IDataModel>> GetFavorite()
+        {
+            var endpoint = new AccountEndpoint(client);
+            var gallery = new GalleryEndpoint(client);
+            var favourites = await endpoint.GetAccountFavoritesAsync();
+            var imageSearch = new List<IDataModel>();
+            var galleryItems = favourites as IList<IGalleryItem> ?? favourites.ToList();
+            foreach (var galleryItem in galleryItems)
+            {
+                if (galleryItem is GalleryAlbum)
+                {
+                    var GI = (GalleryAlbum)galleryItem;
+                    var album = await gallery.GetGalleryAlbumAsync(GI.Id);
+                    foreach (var albumImage in album.Images)
+                    {
+                        imageSearch.Add(albumImage);
+                    }
+                }
+                else
+                {
+                    var t = (GalleryImage)galleryItem;
+
+                    imageSearch.Add(t);
+                }
+            }
+            return galleryItems;
+        }
+
+        public async Task<List<IDataModel>> SearchForImages(string query, int page = 1)
         {
             var endpoint = new GalleryEndpoint(this.client);
-            var submissions = await endpoint.SearchGalleryAsync(query);
+            var submissions = await endpoint.SearchGalleryAsync(query, page: page);
             var searchForImages = new List<IDataModel>();
             foreach (var galleryItem in submissions)
             {
@@ -57,6 +85,8 @@ namespace Epicture.Tools
                     searchForImages.Add(t);
                 }
             }
+            Debug.WriteLine("Returning Search for Images");
+            Debug.WriteLine(searchForImages.Count);
             return searchForImages;
         }
 
